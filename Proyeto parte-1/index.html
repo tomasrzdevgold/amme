@@ -5,9 +5,59 @@
     <meta charset="utf-8">
     <title>Informações Sobre a Cerâmica Artesanal</title>
     <meta name="description" content="Explore a beleza da cerâmica artesanal. Descubra obras únicas, aprenda sobre o processo na produção da cerâmica artesanal, tudo isso e mais em nosso site dedicado à arte em barro.">
+<style>
+    table{
+        border-collapse:collapse
+    }
+    #to{ 
+        border: solid;
+    }
+    .formulario-nome-erro{
+        font-size: 12px;
+        margin-bottom: 0;
+        display: none;
+    }
+    .formulario-nome-erro-ativo{
+       display: block;
+    }
+    .formulario-email-erro{
+        font-size: 12px;
+        margin-bottom: 0;
+        display: none;
+    }
+    .formulario-email-erro-ativo{
+        display: block;
+    }
+    .formulario-genero-erro{
+        font-size: 12px;
+        margin-bottom: 0;
+        display: none;
+    }
+    .formulario-genero-erro-ativo{
+        display: block;
+    }
+    .envio{
+        font-size: 12px;
+        margin-bottom: 0;
+        display: none;
+    }
+    .envio-ativo{
+        display: block;
+    }
+    .envio-erro{
+        font-size: 12px;
+        margin-bottom: 0;
+        display: none;
+    }
+    .envio-erro-ativo{
+        display: block;
+    }
+</style>
+
 </head>
 
 <body>
+
 
     <header>
         <h1 align="center">Informações Sobre a Cerâmica Artesanal</h1>
@@ -141,70 +191,241 @@
 </section>
 
 <section>
-<form>
+<form id="formulario">
 
-<fieldset>
-
-<legend>Formulario de Cadastro</legend>
-
-    <label for="name">Nome:</label>
-    <input type="text" id="name" name="name" />
+    <fieldset>
+    
+    <legend>Formulario de Cadastro</legend>
+    <div id="grupo-nome">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="nome" />
+        <p class="formulario-nome-erro">O nome deve conter duas palavras com mais de uma letra por cada palavra</p>
+        <br> <br>
+    </div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"/>
+        <p class="formulario-email-erro">O email deve conter @, hotmail gmail etc, .com</p>
+        <br>
+    
+        <p>Genero:</p>
+        <input type="radio" id="masculino" name="genero"  value="M"/>
+        <label for="masculino">Masculino</label>
+        <input type="radio" id="feminino" name="genero"  value="F"/>
+        <label for="feminino">Feminino</label>
+        <p class="formulario-genero-erro">Selecione um genero </p>
+        <br> <br>
+    
+        <label for="estados">Selecione um estado:</label>
+        <select id="estados" name="estados">
+            <option value="0">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
     <br> <br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"/>
-    <br>
-
-    <p>Genero:</p>
-    <input type="radio" id="masculino" name="genero" />
-    <label for="masculino">Masculino</label>
-    <input type="radio" id="feminino" name="genero" />
-    <label for="feminino">Feminino</label>
+        <label for="terms">Aceita receber contato da amme</label>
+        <input id="terms" type="checkbox"/>
     <br> <br>
+    
+    <button type="submit">Enviar</button>
+    <button type="reset">limpar</button>
+ 
+    <p class="envio">Envio com succeso</p>
+    <p class="envio-erro">Algum campo não foi preenchido</p>
 
-    <label for="estados">Selecione um estado:</label>
-    <select id="estados" name="estados">
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AP">Amapá</option>
-        <option value="AM">Amazonas</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PR">Paraná</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="RO">Rondônia</option>
-        <option value="RR">Roraima</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SP">São Paulo</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
-    </select>
-<br> <br>
-    <label for="terms">Aceita receber contato da amme</label>
-    <input id="terms" type="checkbox"/>
-<br> <br>
+   
 
-<input type="submit" value="Enviar"/>
 
-</fieldset>
-
-</form>
+    </fieldset>
+    
+    </form>
 </section>
 
+
 <br>
+
+<hr>
+<br>
+
+
+<table border="1" width="500" >
+
+    <thead>
+        <tr bgcolor="BLACK">
+            <th>  oh<br>  </th>
+            <th>  oh<br>  </th>
+            <th>  oh<br>  </th>
+            <th>  oh<br>  </th>
+            <th>  oh<br>  </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>  <br>  </td>
+            <td>  <br>  </td>
+            <td>  <br>  </td>
+            <td>  <br>  </td>
+            <td rowspan="3">  <br>  </td>
+        </tr>
+        <tr>
+            <td>   <br>  </td>
+            <td align="right" colspan="2">Alinhado direita </td>
+            <td id="to">   <br>  </td>
+            
+        </tr>
+        <tr>
+            <td>  <br>  </td>
+            <td bgcolor="GREY">  <br>  </td>
+            <td>  <br>  </td>
+            <td>  <br>  </td>
+            
+        </tr>
+        <tr>
+            <td>  <br>  </td>
+            <td>  <br>  </td>
+            <td colspan="3" align="center">  Texto alinhado ao centro<br>  </td>
+            
+        </tr>
+       
+       
+    </tbody>
+
+</table>
+
+<br>
+<br>
+
+
+
+<script>
+const formulario = document.getElementById('formulario')
+const inputs = document.querySelectorAll('#formulario input')
+
+
+const campos = {
+nome: false,
+email: false,
+genero: false,
+estados: false
+}
+
+
+
+const expressoes = {
+nome : /^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑA-Z]{2,}\s[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑA-Z]{2,}$/ ,
+email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+}
+
+
+const validarFormulario = (e)=>{ 
+switch (e.target.name) {
+    case "nome" :
+        if(expressoes.nome.test(e.target.value)){
+            document.querySelector('#grupo-nome .formulario-nome-erro').classList.remove('formulario-nome-erro-ativo')
+            campos["nome"] = true
+        }else{
+            document.querySelector('#grupo-nome .formulario-nome-erro').classList.add('formulario-nome-erro-ativo')
+            campos["nome"] = false
+            
+        }
+    break
+    case "email" :
+        if(expressoes.email.test(e.target.value)){
+            document.querySelector('.formulario-email-erro').classList.remove('formulario-email-erro-ativo')
+            campos["email"] = true
+        }else {
+            document.querySelector('.formulario-email-erro').classList.add('formulario-email-erro-ativo')
+            campos["email"] = false
+        }
+    break
+    case "genero":
+        let generoM = document.getElementById("masculino")
+        let generoF = document.getElementById("feminino")
+
+       
+            if(!generoM || !generoF){
+                campos["genero"] = false
+            } else {
+                campos["genero"] = true
+            }
+        
+    break
+   
+}
+}
+
+
+function Validarestado (){
+let select = document.getElementById("estados");
+let value = select.options[select.selectedIndex].value;
+
+ if (value=="0"){
+    campos["estados"]= false
+} else {
+    campos["estados"] = true
+}
+
+}
+
+
+
+inputs.forEach((input)=>{
+input.addEventListener('blur',validarFormulario)
+})
+
+
+formulario.addEventListener('submit', (e) => {
+e.preventDefault()
+Validarestado()
+
+if(campos.nome && campos.email && campos.genero && campos.estados){
+    formulario.reset()
+    document.querySelector('.envio').classList.add('envio-ativo')
+    setTimeout(()=>{
+        document.querySelector('.envio').classList.remove('envio-ativo')
+
+    },1000)
+} else {
+    document.querySelector('.envio-erro').classList.add('envio-erro-ativo')
+    setTimeout(()=>{
+        document.querySelector('.envio-erro').classList.remove('envio-erro-ativo')
+
+    },3000)
+}
+})
+
+formulario.addEventListener('reset', (e) => {
+formulario.reset()
+})
+</script>
+   
+
     <footer>
         <fieldset>
             <legend>Links</legend>
