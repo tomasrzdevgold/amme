@@ -1,5 +1,17 @@
 {
   "dependencies": {
     "@vercel/postgres": "^0.5.1"
-  }
+  },
+  
+
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start"
+    }
+  
+  
+  
 }
+
+
